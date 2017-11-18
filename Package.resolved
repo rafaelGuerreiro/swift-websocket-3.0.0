@@ -1,0 +1,16 @@
+{
+  "object": {
+    "pins": [
+      {
+        "package": "Vapor",
+        "repositoryURL": "https://github.com/vapor/vapor.git",
+        "state": {
+          "branch": null,
+          "revision": "abb94939dd707372361afa7610fae2f3911b045e",
+          "version": "3.0.0-alpha.1"
+        }
+      }
+    ]
+  },
+  "version": 1
+}
