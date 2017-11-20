@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>MiniChat</title>
+
+        <link rel="shortcut icon" type="image/png" href="/favicon.png"/>
+
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+          integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+          crossorigin="anonymous" />
+        <link href="styles/style.css" rel="stylesheet" type="text/css" />
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
+          integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+          crossorigin="anonymous"></script>
+        <script src="https://momentjs.com/downloads/moment.min.js" defer></script>
+        <script src="scripts/script.js" defer></script>
+    </head>
+    <body>
+      <main>
+        <div class="center-container alert alert-danger error hide"></div>
+        <div class="center-container main-container username">
+          <div class="input-group">
+            <input type="text" name="username" class="form-control" placeholder="Please, enter your name to connect." />
+            <span class="input-group-btn">
+              <button class="btn btn-primary" type="button">Connect</button>
+            </span>
+          </div>
+        </div>
+        <div class="hide center-container main-container chat">
+          <div class="header">
+            <button type="button" class="close" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+            <h3>Chat</h3>
+          </div>
+          <div class="timeline">
+          </div>
+          <div class="input-box">
+            <div class="input-group">
+              <input type="text" name="post" class="form-control" placeholder="Start typing..." disabled="disabled">
+              <span class="input-group-btn">
+                <button class="btn btn-success" type="button">Send</button>
+              </span>
+            </div>
+          </div>
+        </div>
+      </main>
+    </body>
+</html>

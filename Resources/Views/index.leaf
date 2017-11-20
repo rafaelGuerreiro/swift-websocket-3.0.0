@@ -1,0 +1,37 @@
+#extend("base")
+
+#export("head") {
+    <title>MiniChat</title>
+}
+
+#export("body") {
+<main>
+  <div class="center-container alert alert-danger error hide"></div>
+  <div class="center-container main-container username">
+    <div class="input-group">
+      <input type="text" name="username" class="form-control" placeholder="Please, enter your name to connect." />
+      <span class="input-group-btn">
+        <button class="btn btn-primary" type="button">Connect</button>
+      </span>
+    </div>
+  </div>
+  <div class="hide center-container main-container chat">
+    <div class="header">
+      <button type="button" class="close" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+      </button>
+      <h3>Chat</h3>
+    </div>
+    <div class="timeline">
+    </div>
+    <div class="input-box">
+      <div class="input-group">
+        <input type="text" name="post" class="form-control" placeholder="Start typing..." disabled="disabled">
+        <span class="input-group-btn">
+          <button class="btn btn-success" type="button">Send</button>
+        </span>
+      </div>
+    </div>
+  </div>
+</main>
+}

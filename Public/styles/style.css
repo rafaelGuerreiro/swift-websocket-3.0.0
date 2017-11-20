@@ -1,0 +1,146 @@
+* { box-sizing: border-box; }
+
+html, body {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+body {
+  font-family: Tahoma, sans-serif;
+  display: flex;
+  width: 100vw;
+  height: 100vh;
+  align-items: center;
+  justify-content: center;
+}
+
+.center-container {
+  width: 40vw;
+  margin: 0 auto;
+}
+
+.error {
+  margin: 0 auto 10px;
+}
+
+.main-container {
+  box-shadow: 0px 0px 5px #999;
+  overflow-y: hidden;
+  border-radius: 4px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background-color: #f2f2f2;
+}
+
+.main-container.username>.input-group {
+  padding: 15px;
+}
+
+.main-container.chat {
+  height: 90vh;
+}
+
+.main-container>.header {
+  padding: 10px;
+  border-bottom: 1px solid #ccc;
+}
+
+.main-container>.header>h3 {
+  margin: 0;
+}
+
+.main-container>div {
+  width: 100%;
+}
+
+.timeline {
+  display: flex;
+  flex-grow: 2;
+  overflow: visible;
+  overflow-y: scroll;
+  flex-direction: column;
+  justify-content: flex-start;
+  border-bottom: 1px solid #ccc;
+  padding: 10px 15px;
+}
+
+.timeline>.post {
+  max-width: 75%;
+  word-wrap: normal;
+  margin-top: 10px;
+  display: inline-block;
+  border-radius: 4px;
+  padding: 10px;
+  box-shadow: 0px 1px 3px #999;
+
+  border: 1px solid #d6e9c6;
+  color: #3c763d;
+  background-color: #dff0d8;
+}
+
+.timeline>.post.self {
+  align-self: flex-end;
+  text-align: right;
+  color: #31708f;
+  background-color: #d9edf7;
+  border-color: #bce8f1;
+}
+
+.input-box {
+  padding: 10px;
+  background-color: #f2f2f2;
+}
+
+.timestamps {
+  position: absolute;
+  left: 10%;
+  margin-top: -12px;
+
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.post.self>.timestamps {
+  left: initial;
+  right: 10%;
+}
+
+.timestamps>div {
+  font-size: 0.8em;
+  color: #999;
+  display: inline-block;
+  text-align: right;
+}
+
+.post.self>.timestamps>div {
+  text-align: left;
+}
+
+.timeline>.post:hover .timestamps {
+  display: flex;
+}
+
+@media screen and (max-width: 736px) {
+  body {
+    align-items: flex-start;
+    padding-top: 15px;
+    /*height: 50vh;*/
+    overflow: hidden;
+  }
+
+  .main-container.chat {
+    height: 45vh;
+    /*max-height: 50vh;*/
+  }
+
+  .center-container {
+    width: 90vw;
+  }
+
+  input[type='text'], input[type='number'], textarea {
+    font-size: 16px;
+  }
+}

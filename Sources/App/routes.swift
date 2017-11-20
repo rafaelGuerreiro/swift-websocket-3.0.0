@@ -1,5 +1,12 @@
 import Routing
 import Vapor
+import WebSocket
+import HTTP
+import Redis
+import TCP
+import Async
+import Foundation
+import Leaf
 
 /// Register your application's routes here.
 ///
@@ -17,8 +24,16 @@ final class Routes: RouteCollection {
 
     /// See RouteCollection.boot
     func boot(router: Router) throws {
-        router.get("hello") { req in
-            return "Hello, world!"
+        router.get("/") { req in
+            return try self.app.make(ViewRenderer.self).make("index.leaf", context: req, on: req)
+        }
+
+        router.get("chat", String.parameter) { req in
+            return try req.parameters.next(String.self).map { (username: String) -> Response in
+                return try req.upgradeToWebSocket() { (websocket: WebSocket) in
+                    try WebsocketServer.register(username: username, websocket: websocket)
+                }
+            }
         }
     }
 }
